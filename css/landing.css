@@ -1,0 +1,30 @@
+/* Landing Page Specific Styles */
+body {
+    background-color: #d2beba; /* Default background color */
+  }
+  
+  .landing-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .start-button {
+    font-size: 24px;
+    padding: 12px 24px;
+    background-color: #90ab71;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .start-button:hover {
+    background-color: #7c965e;
+  }
+  

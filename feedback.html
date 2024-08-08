@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback - Mistermind Class</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/names.css" />
+</head>
+
+<body>
+
+    <!-- Button for going back to the landing page -->
+    <button id="backButton" class="back-button">Zpět</button>
+
+    <div class="feedback-container">
+        <h2>Feedback</h2>
+        <form id="feedbackForm" action="#" method="post">
+            <textarea id="message" name="message" rows="5" cols="40" placeholder="Zadejte svou zpětnou vazbu zde..."></textarea>
+            <button type="submit" class="submit-button">Odeslat</button>
+        </form>
+    </div>
+
+    <!-- Tlačítko pro změnu pozadí -->
+    <button id="changeBackgroundButton" class="change-background-button">
+        Změnit pozadí
+    </button>
+
+
+    <script src="js/randomBackground.js"></script>
+    <script>
+        // Add an event listener to the feedback form to handle form submission
+        document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Děkujeme za vaši zpětnou vazbu!');
+            // You can add AJAX code here to send the feedback to a server
+        });
+
+        // Add an event listener to the back button to navigate to the main page
+        document.getElementById('backButton').addEventListener('click', function () {
+            // Replace 'main.html' with the actual URL or path of your main page
+            window.location.href = 'main.html';
+        });
+    </script>
+</body>
+

@@ -1,0 +1,215 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 200px; /* Adjusted padding to make room for the footer */
+}
+
+/* Title Styles */
+.main-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.bee-emoji {
+  margin-left: 10px;
+}
+
+/* Button Styles */
+button {
+  font-size: 20px;
+  padding: 12px 24px;
+  margin: 5px;
+  color: #ffffff;
+  background-color: #90ab71;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #7c965e;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Styles for the Back Button */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #90ab71;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #7c965e;
+}
+
+/* New Styles for Button Row */
+.button-row {
+  display: flex;
+  flex-direction: row; /* Align buttons side by side */
+  gap: 10px;
+  justify-content: center; /* Center the buttons horizontally */
+}
+
+.add-input-button {
+  font-size: 24px;
+  padding: 8px 16px;
+  background-color: #90ab71;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.add-input-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.done-button {
+  font-size: 20px;
+  padding: 12px 24px;
+  margin-top: 10px;
+  background-color: #90ab71;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.done-button:hover {
+  background-color: #7c965e;
+}
+
+/* Timer Styles */
+.timers-wrapper {
+  display: flex;
+  gap: 40px; /* Increase gap between timers */
+  margin-top: 20px; /* Add margin to separate from other content */
+  padding: 20px; /* Add padding to ensure space from edges */
+}
+
+.timer-container {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px; /* Add margin for spacing between containers */
+}
+
+.timer {
+  font-size: 96px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333333;
+}
+
+.change-background-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.change-background-button:hover {
+  background-color: #bfa09b;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  .main-title {
+    font-size: 28px;
+  }
+
+  .timers-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .timer-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .timer {
+    font-size: 72px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .change-background-button {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-title {
+    font-size: 32px;
+  }
+
+  .timer-container {
+    width: 80%;
+  }
+
+  .timer {
+    font-size: 84px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+
+  .change-background-button {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+}

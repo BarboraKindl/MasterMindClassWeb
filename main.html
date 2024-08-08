@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mistermind Class - Minutky a Zadavač Jmen</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/names.css" />
+    <link rel="stylesheet" href="css/shedule.css" />
+
+    <!-- Přidání odkazu na Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Button for going back to the landing page -->
+    <button id="backButton" class="back-button">Zpět</button>
+
+    <!-- Section for entering names -->
+    <div class="name-input-container">
+        <h2>Zadejte jména</h2>
+        <div id="nameInputs" class="name-inputs">
+            <div class="name-input-row">
+                <input type="text" class="name-input" placeholder="Jméno 1" />
+            </div>
+        </div>
+        <div class="button-row">
+            <button class="add-input-button" id="addButton">+</button>
+            <button class="add-input-button" id="removeButton" disabled>-</button>
+        </div>
+        <button id="doneButton" class="done-button">Hotovo</button>
+    </div>
+
+    <!-- Schedule Display Section -->
+    <div id="scheduleContainer" class="schedule-container" style="display: none;">
+        <h2>Harmonogram</h2>
+        <div id="schedule"></div>
+    </div>
+
+    <div class="timers-wrapper">
+        <!-- První časovač na 5 minut s názvem Speaker -->
+        <div class="timer-container">
+            <h2>Speaker</h2>
+            <div id="timer1" class="timer">05:00</div>
+            <button id="startButton1">Start</button>
+            <button id="pauseButton1" disabled>Pauza</button>
+            <button id="resetButton1">Reset</button>
+        </div>
+        <!-- Druhý časovač na 2 minuty s názvem Feedback -->
+        <div class="timer-container">
+            <h2>Feedback</h2>
+            <div id="timer2" class="timer">02:00</div>
+            <button id="startButton2">Start</button>
+            <button id="pauseButton2" disabled>Pauza</button>
+            <button id="resetButton2">Reset</button>
+        </div>
+    </div>
+
+    <!-- Feedback Button -->
+    <button id="feedbackButton" class="feedback-button"> 📩 Feedback</button>
+
+    <!-- Tlačítko pro změnu pozadí -->
+    <button id="changeBackgroundButton" class="change-background-button">
+        Změnit pozadí
+    </button>
+
+    <!-- Footer with links and social share -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://github.com/BarboraKindl" target="_blank" class="footer-link">Animuj</a>
+            <a href="https://example.com/about" class="footer-link">About</a>
+            <a href="https://example.com/contact" class="footer-link">Contact</a>
+            <!-- Add more links as needed -->
+        </div>
+
+        <!-- Date and Time Display -->
+        <div class="date-time-display" id="dateTimeDisplay"></div>
+
+
+        <!-- Lišta pro sdílení na sociálních sítích -->
+        <div class="social-share-bar">
+            <a href="#" class="social-link" id="share-whatsapp" title="Sdílet na WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" class="social-link" id="share-twitter" title="Sdílet na Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" id="share-facebook" title="Sdílet na Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="social-link" id="share-linkedin" title="Sdílet na LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" class="social-link" id="share-email" title="Sdílet emailem">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </footer>
+
+    <audio id="beep-sound" src="sounds/beep.mp3"></audio>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <!-- Include SortableJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
+    <script src="js/randomBackground.js"></script>
+    <script src="js/inputHandler.js"></script>
+    <script src="js/timers.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/datetime.js"></script>
+    <!-- Přidání skriptu pro sdílení -->
+    <script src="js/share.js"></script>
+
+    <script>
+        // Redirect to feedback page on button click
+        document.getElementById('feedbackButton').addEventListener('click', function () {
+            window.location.href = 'feedback.html';
+        });
+
+        // Redirect to feedback page on main content link click
+        document.getElementById('mainFeedbackLink').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            window.location.href = 'feedback.html'; // Redirect to feedback page
+        });
+    </script>
+</body>
+
+</html>
