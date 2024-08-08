@@ -6,5 +6,3 @@ Please select your preferred language: / Prosím vyberte preferovaný jazyk:
 
 - [English Version](README_en.md)
 - [Česká Verze](README_cs.md)
-# MastermindClassTool
-
