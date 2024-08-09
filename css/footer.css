@@ -1,80 +1,44 @@
-/* Footer Styles */
 .footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(33, 37, 41, 0.9);
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
   text-align: center;
-  padding: 20px 0;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-  color: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-links {
+  margin-bottom: 10px;
 }
 
 .footer-link {
-  margin: 0 15px;
-  color: #ffffff;
+  color: #fff;
+  margin: 0 10px;
   text-decoration: none;
-  font-size: 16px;
   transition: color 0.3s;
 }
 
 .footer-link:hover {
-  color: #ffc107;
+  color: #90ab71;
 }
 
 .date-time-display {
-  font-size: 16px; /* Increase font size for better visibility */
-  color: #ffffff;  /* Match color with footer text */
-  text-align: center;
-  margin: 0 15px;  /* Align with footer-link margins */
-  padding: 5px 10px; /* Add some padding for a neat appearance */
-  border-radius: 5px; /* Rounded corners for the box */
+  margin-bottom: 10px;
 }
 
-/* Social Share Bar Styles */
 .social-share-bar {
   display: flex;
-  gap: 10px;
+  justify-content: center;
 }
 
 .social-link {
-  color: #ffffff;
+  color: #fff;
+  margin: 0 10px;
   font-size: 24px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s;
 }
 
 .social-link:hover {
-  transform: scale(1.1);
-}
-
-#share-whatsapp {
-  background-color: #25D366;
-}
-
-#share-twitter {
-  background-color: #1DA1F2;
-}
-
-#share-facebook {
-  background-color: #1877F2;
-}
-
-#share-linkedin {
-  background-color: #0077B5;
-}
-
-#share-email {
-  background-color: #333333;
+  color: #90ab71;
 }

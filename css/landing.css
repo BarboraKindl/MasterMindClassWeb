@@ -5,16 +5,15 @@ body {
   
   .landing-container {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 10px;
+    background-color: rgba(197, 148, 148, 0.9);
+    padding: 50px;
+    border-radius: 100px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
   
   .start-button {
-    font-size: 24px;
+    font-size: 2px;
     padding: 12px 24px;
-    background-color: #90ab71;
     color: #ffffff;
     border: none;
     border-radius: 5px;
