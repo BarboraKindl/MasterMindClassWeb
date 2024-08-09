@@ -82,7 +82,7 @@
 
 <body>
 
-    <!-- Button for going back to the landing page -->
+    <!-- Tlačítko pro návrat na hlavní stránku -->
     <div class="button-container">
         <button id="backButton" class="back-button">Zpět</button>
         <button id="changeBackgroundButton" class="change-background-button">Změnit pozadí</button>
@@ -92,21 +92,21 @@
         <h2>Feedback</h2>
         <form id="feedbackForm" action="#" method="post">
             <input type="email" id="email" name="email" placeholder="Zadejte svůj email zde..." required />
-            <textarea id="message" name="message" rows="5" cols="40" placeholder="Zadejte svou zpětnou vazbu zde..."></textarea>
+            <textarea id="message" name="message" rows="5" cols="40" placeholder="Zadejte svou zpětnou vazbu zde..." required></textarea>
             <button type="submit" class="submit-button">Odeslat</button>
         </form>
     </div>
 
-        <!-- Footer with links and social share -->
+        <!-- Patička s odkazy a sdílením na sociálních sítích -->
         <footer class="footer">
             <div class="footer-links">
                 <a href="https://github.com/BarboraKindl" target="_blank" class="footer-link">Animuj</a>
                 <a href="https://example.com/about" class="footer-link">About</a>
                 <a href="https://example.com/contact" class="footer-link">Contact</a>
-                <!-- Add more links as needed -->
+                <!-- Přidejte další odkazy podle potřeby -->
             </div>
     
-            <!-- Date and Time Display -->
+            <!-- Zobrazení data a času -->
             <div class="date-time-display" id="dateTimeDisplay"></div>
     
     
@@ -132,7 +132,7 @@
     
     <audio id="beep-sound" src="sounds/beep.mp3"></audio>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <!-- Include SortableJS -->
+    <!-- Vložení SortableJS -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
     
     <script src="js/randomBackground.js"></script>
@@ -145,16 +145,35 @@
 
     <script src="js/randomBackground.js"></script>
     <script>
-        // Add an event listener to the feedback form to handle form submission
+        // Přidání posluchače událostí k formuláři zpětné vazby pro zpracování odeslání
         document.getElementById('feedbackForm').addEventListener('submit', function (event) {
             event.preventDefault();
-            alert('Děkujeme za vaši zpětnou vazbu!');
-            // You can add AJAX code here to send the feedback to a server
+            
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const date = new Date().toISOString();
+
+            // Zde přidáme AJAX kód pro odeslání zpětné vazby na server s použitím MongoDB
+            fetch('/api/feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, message, date }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Děkujeme za vaši zpětnou vazbu!');
+                document.getElementById('feedbackForm').reset();
+            })
+            .catch(error => {
+                console.error('Chyba:', error);
+                alert('Došlo k chybě při odesílání zpětné vazby. Zkuste to prosím znovu.');
+            });
         });
 
-        // Add an event listener to the back button to navigate to the main page
+        // Přidání posluchače událostí k tlačítku zpět pro navigaci na hlavní stránku
         document.getElementById('backButton').addEventListener('click', function () {
-            // Replace 'main.html' with the actual URL or path of your main page
             window.location.href = 'main.html';
         });
     </script>

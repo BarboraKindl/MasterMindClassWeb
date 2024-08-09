@@ -1,4 +1,5 @@
 // server.js
+require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -11,8 +12,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/feedbackDB', {
+// Připojení k MongoDB
+// Poznámka: Tento údaj je citlivý a neměl by být sdílen na Gitu
+// Pro zajištění bezpečnosti použijte proměnné prostředí nebo konfigurační soubor
+const mongoURI = process.env.MONGO_URI || MONGO_URI;
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
