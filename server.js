@@ -13,9 +13,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Připojení k MongoDB
-// Poznámka: Tento údaj je citlivý a neměl by být sdílen na Gitu
-// Pro zajištění bezpečnosti použijte proměnné prostředí nebo konfigurační soubor
-const mongoURI = process.env.MONGO_URI || MONGO_URI;
+const mongoURI = process.env.MONGO_URI;
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -42,7 +40,7 @@ app.post('/api/feedback', async (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server běží na portu ${PORT}`);
 });
