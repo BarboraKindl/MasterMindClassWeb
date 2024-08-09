@@ -1,4 +1,4 @@
-# **[Mistermind Class Timer](https://barborakindl.github.io/Mastermind-meeting/)**
+# **[Mistermind Class Timer](https://barborakindl.github.io/MastermindClassTool/)**
 
 Welcome to the Mistermind Class Timer project! / Vítejte v projektu Mistermind Class Timer!
 
