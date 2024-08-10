@@ -13,6 +13,7 @@
 
 /* Style for individual schedule items */
 .schedule-item {
+    margin-right: 35px;
     margin-bottom: 20px; /* Increase margin for more space between items */
     padding: 10px 10px 10px 50px; /* Add padding on the left for the number */
     border-radius: 5px;
