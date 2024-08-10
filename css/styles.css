@@ -12,8 +12,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding-top: 100px;
-  padding-bottom: 200px; /* Adjusted padding to make room for the footer */
+  padding-top: 250px;
+  padding-bottom: 600px; /* Adjusted padding to make room for the footer */
 }
 
 /* Title Styles */
