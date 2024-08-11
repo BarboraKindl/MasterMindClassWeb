@@ -4,16 +4,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mistermind Class - Minutky a Zadavač Jmen</title>
+    <meta name="description" content="Join Mistermind Class on an exciting journey of learning and discovery.">
+    <meta property="og:title" content="Mistermind Class - Úvodní stránka">
+    <meta property="og:description" content="Join Mistermind Class on an exciting journey of learning and discovery.">
+    <meta property="og:image" content="https://example.com/path/to/image.jpg">
+    <meta property="og:url" content="https://example.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Mistermind Class - Hlavní stránka</title>
+    <link rel="stylesheet" href="css/front_page.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/main/names.css" />
     <link rel="stylesheet" href="css/main/shedule.css" />
-
-
-    <!-- Přidání odkazu na Font Awesome -->
+    <link rel="stylesheet" href="css/general/footer.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
+
 
 <body>
     <!-- Button for going back to the landing page -->
@@ -38,6 +43,8 @@
     <div id="scheduleContainer" class="schedule-container" style="display: none;">
         <h2>Harmonogram</h2>
         <ul id="schedule" class="sortable-list"></ul>
+        <!-- Button to change names -->
+        <button id="changeNamesButton" class="change-names-button">Změnit jména</button>
     </div>
 
     <div class="timers-wrapper">
@@ -119,53 +126,7 @@
         document.getElementById('feedbackButton').addEventListener('click', function () {
             window.location.href = 'feedback.html';
         });
-
-        // Redirect to feedback page on main content link click
-        document.getElementById('mainFeedbackLink').addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent the default anchor behavior
-            window.location.href = 'feedback.html'; // Redirect to feedback page
-        });
-
-        // Inicializace Sortable pro harmonogram
-        var scheduleList = document.getElementById('schedule');
-        new Sortable(scheduleList, {
-            animation: 150,
-            ghostClass: 'blue-background-class',
-            handle: '.schedule-item', // Přidáno: Určuje, že celý prvek je uchopitelný
-            draggable: '.schedule-item' // Přidáno: Specifikuje, které prvky jsou přetahovatelné
-        });
-
-        // Funkce pro vytvoření harmonogramu
-        function createSchedule(names) {
-            var scheduleContainer = document.getElementById('scheduleContainer');
-            var scheduleList = document.getElementById('schedule');
-            scheduleList.innerHTML = ''; // Vyčistíme stávající harmonogram
-
-            names.forEach(function(name, index) {
-                var li = document.createElement('li');
-                li.textContent = (index + 1) + '. ' + name;
-                li.className = 'schedule-item';
-                li.style.cursor = 'move'; // Přidáno: Změní kurzor na "move" při najetí na položku
-                scheduleList.appendChild(li);
-            });
-
-            scheduleContainer.style.display = 'block';
-        }
-
-        // Upravte funkci pro zpracování jmen, aby volala createSchedule
-        document.getElementById('doneButton').addEventListener('click', function() {
-            var inputs = document.getElementsByClassName('name-input');
-            var names = Array.from(inputs).map(input => input.value).filter(name => name.trim() !== '');
-            
-            if (names.length > 0) {
-                createSchedule(names);
-            } else {
-                alert('Prosím, zadejte alespoň jedno jméno.');
-            }
-        });
     </script>
 </body>
 
 </html>
-
-

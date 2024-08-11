@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const doneButton = document.getElementById("doneButton");
   const scheduleContainer = document.getElementById("scheduleContainer");
   const scheduleDiv = document.getElementById("schedule");
+  const nameInputContainerWrapper = document.querySelector('.name-input-container');
+  const changeNamesButton = document.getElementById("changeNamesButton");
 
-  const maxInputs = 5; // Set a limit for maximum inputs
+  const maxInputs = 6; // Set a limit for maximum inputs
 
   // Function to add a new input field
   const addInputField = () => {
@@ -86,10 +88,17 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         generateSchedule(names);
         scheduleContainer.style.display = "block"; // Show the schedule
+        nameInputContainerWrapper.style.display = "none"; // Hide the name input container
       }
     } else {
       showError("Please enter at least two names.");
     }
+  };
+
+  // Function to handle the "Změnit jména" button click
+  const handleChangeNamesClick = () => {
+    scheduleContainer.style.display = "none"; // Hide the schedule container
+    nameInputContainerWrapper.style.display = "block"; // Show the name input container
   };
 
   // Function to show an error message
@@ -101,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
   addButton.addEventListener("click", addInputField);
   removeButton.addEventListener("click", removeInputField);
   doneButton.addEventListener("click", handleDoneClick);
+  changeNamesButton.addEventListener("click", handleChangeNamesClick); // Add event listener for change names button
 
   // Initialize by adding one input field
   addInputField();

@@ -10,7 +10,7 @@ body {
 }
 
 .feedback-container {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -21,6 +21,25 @@ body {
 
 .feedback-container h2 {
     margin-top: 0;
+}
+
+
+#feedbackForm input[type="email"] {
+    padding: 10px; /* Přidá prostor uvnitř vstupního pole */
+    font-size: 16px; /* Volitelně, pro lepší čitelnost */
+    border: 1px solid #ccc; /* Pro lepší viditelnost okraje */
+    border-radius: 4px; /* Kulaté rohy pro moderní vzhled */
+    box-sizing: border-box; /* Zajišťuje, že padding se správně aplikuje */
+    width: 100%; /* Zajišťuje, že vstupní pole zabere celou šířku kontejneru */
+}
+
+#feedbackForm textarea {
+    padding: 10px; /* Přidá prostor uvnitř textarea */
+    font-size: 16px; /* Volitelně, pro lepší čitelnost */
+    border: 1px solid #ccc; /* Pro lepší viditelnost okraje */
+    border-radius: 4px; /* Kulaté rohy pro moderní vzhled */
+    box-sizing: border-box; /* Zajišťuje, že padding se správně aplikuje */
+    width: 100%; /* Zajišťuje, že textarea zabere celou šířku kontejneru */
 }
 
 .feedback-container input,
