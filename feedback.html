@@ -78,35 +78,36 @@
     <script src="js/randomBackground.js"></script>
     <script>
         // Přidání posluchače událostí k formuláři zpětné vazby pro zpracování odeslání
-        document.getElementById('feedbackForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            const date = new Date().toISOString();
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Zabráníme standardnímu odeslání formuláře
 
-            // Zde přidáme AJAX kód pro odeslání zpětné vazby na server s použitím MongoDB
-            fetch('/api/feedback', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, message, date }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert('Děkujeme za vaši zpětnou vazbu!');
-                document.getElementById('feedbackForm').reset();
-            })
-            .catch(error => {
-                console.error('Chyba:', error);
-                alert('Došlo k chybě při odesílání zpětné vazby. Zkuste to prosím znovu.');
-            });
+        // Získání hodnot z formuláře
+        const email = document.getElementById('email').value;
+        const feedback = document.getElementById('feedback').value;
+
+        // Odeslání dat na server pomocí fetch API
+        fetch('http://localhost:3000/submitFeedback', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, feedback }),
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log('Success:', data);
+            document.getElementById('feedbackForm').classList.add('hidden');
+            document.getElementById('confirmationMessage').classList.remove('hidden');
+        })
+        .catch((error) => {
+            console.error('Error:', error);
         });
+    });
 
-        // Přidání posluchače událostí k tlačítku zpět pro navigaci na hlavní stránku
+
+    // Přidání posluchače událostí k tlačítku zpět pro navigaci na hlavní stránku
         document.getElementById('backButton').addEventListener('click', function () {
-            window.location.href = 'main.html';
-        });
+        window.location.href = 'main.html';
+    });
     </script>
 </body>

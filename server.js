@@ -4,43 +4,48 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cors = require('cors');
 
 const app = express();
-
-// Middleware
-app.use(bodyParser.json());
-app.use(cors());
+const port = 3000;
 
 // Připojení k MongoDB
-const mongoURI = process.env.MONGO_URI;
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.log('Failed to connect to MongoDB', err));
 
-// Define a schema and model for feedback
+// Definování modelu pro ukládání feedbacku
 const feedbackSchema = new mongoose.Schema({
-  message: String,
-  date: { type: Date, default: Date.now },
+  email: String,
+  feedback: String,
+  submissionDate: { type: Date, default: Date.now }
 });
 
 const Feedback = mongoose.model('Feedback', feedbackSchema);
 
-// API endpoint to handle feedback submission
-app.post('/api/feedback', async (req, res) => {
-  try {
-    const { message } = req.body;
-    const feedback = new Feedback({ message });
-    await feedback.save();
-    res.status(201).json({ message: 'Feedback submitted successfully' });
-  } catch (error) {
-    res.status(500).json({ error: 'An error occurred while submitting feedback' });
-  }
+// Middleware pro zpracování těla požadavku
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// CORS middleware pro povolení požadavků z jiných domén
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
 });
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server běží na portu ${PORT}`);
+// Endpoint pro příjem feedbacku
+app.post('/submitFeedback', (req, res) => {
+  const newFeedback = new Feedback({
+    email: req.body.email,
+    feedback: req.body.feedback
+  });
+
+  newFeedback.save()
+    .then(() => res.status(201).send('Feedback saved successfully'))
+    .catch(err => res.status(500).send('Failed to save feedback'));
+});
+
+// Spuštění serveru
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
