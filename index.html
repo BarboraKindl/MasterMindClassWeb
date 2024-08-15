@@ -7,17 +7,32 @@
     <meta name="description" content="Join Mistermind Class on an exciting journey of learning and discovery.">
     <meta property="og:title" content="Mistermind Class - Úvodní stránka">
     <meta property="og:description" content="Join Mistermind Class on an exciting journey of learning and discovery.">
-    <meta property="og:image" content="https://example.com/path/to/image.jpg">
-    <meta property="og:url" content="https://example.com">
     <meta name="twitter:card" content="summary_large_image">
     <title>Mistermind Class - Úvodní stránka</title>
     <link rel="stylesheet" href="css/general/footer.css" />
     <link rel="stylesheet" href="css/front_page.css" />
+    <link rel="stylesheet" href="css/general/topbar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 
 
-<body>
+<body>  
+    
+    <header>
+        <div class="top-bar">
+            <div class="login">
+                <a href="#">Přihlášení</a>
+            </div>
+            <div class="language-switcher">
+                <a href="#" id="cz-flag">🇨🇿</a>
+                <a href="#" id="en-flag">🇬🇧</a>
+            </div>
+        </div>
+    </header>
+    
+
+
+
     <div class="landing-container">
         <h1 class="main-title">
             Welcome to 
@@ -64,6 +79,7 @@
     <script src="js/randomBackground.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/share.js"></script>
+    <script src="js/topbar.js"></script>
 </body>
 
 </html>
