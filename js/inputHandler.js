@@ -10,8 +10,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const maxInputs = 6; // Set a limit for maximum inputs
 
+  // Load names and schedule from local storage
+  const loadFromLocalStorage = () => {
+    const savedNames = JSON.parse(localStorage.getItem('names')) || [];
+    const savedSchedule = JSON.parse(localStorage.getItem('schedule')) || [];
+
+    savedNames.forEach((name, index) => {
+      addInputField(name);
+    });
+
+    if (savedNames.length > 1) {
+      generateSchedule(savedNames);
+      scheduleContainer.style.display = 'block';
+      nameInputContainerWrapper.style.display = 'none';
+    }
+  };
+
+  // Function to save names and schedule to local storage
+  const saveToLocalStorage = (names, schedule) => {
+    localStorage.setItem('names', JSON.stringify(names));
+    localStorage.setItem('schedule', JSON.stringify(schedule));
+  };
+
   // Function to add a new input field
-  const addInputField = () => {
+  const addInputField = (value = "") => {
     const currentInputCount = nameInputsContainer.children.length;
 
     if (currentInputCount < maxInputs) {
@@ -20,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       newInput.className = "name-input";
       newInput.placeholder = `Jméno ${currentInputCount + 1}`;
       newInput.autocomplete = "off";
+      newInput.value = value;
 
       const newInputRow = document.createElement("div");
       newInputRow.className = "name-input-row";
@@ -73,6 +96,12 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       scheduleDiv.appendChild(scheduleItem);
     });
+
+    // Save the schedule to local storage
+    saveToLocalStorage(names, names.map((name, index) => ({
+      speaker: name,
+      feedback: names.filter((_, i) => i !== index).join(", ")
+    })));
   };
 
   // Function to handle the "Done" button click
@@ -113,5 +142,10 @@ document.addEventListener("DOMContentLoaded", () => {
   changeNamesButton.addEventListener("click", handleChangeNamesClick); // Add event listener for change names button
 
   // Initialize by adding one input field
-  addInputField();
+  if (!localStorage.getItem('names')) {
+    addInputField();
+  } else {
+    loadFromLocalStorage();
+  }
 });
+
