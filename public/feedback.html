@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feedback - Mistermind Class</title>
-    <link rel="stylesheet" href="public/css/general/styles.css" />
-    <link rel="stylesheet" href="public/css/general/footer.css" />
-    <link rel="stylesheet" href="public/css/names.css" />
-    <link rel="stylesheet" href="public/css/feedback.css" />
+    <link rel="stylesheet" href="css/general/styles.css" />
+    <link rel="stylesheet" href="css/general/footer.css" />
+    <link rel="stylesheet" href="css/names.css" />
+    <link rel="stylesheet" href="css/feedback.css" />
 
 </head>
 
@@ -21,11 +21,11 @@
 
     <div class="feedback-container">
         <h2>Feedback</h2>
-        <form id="feedbackForm" action="/api/feedback" method="post">
+        <form id="feedbackForm" method="post">
             <input type="email" id="email" name="email" placeholder="Zadejte svůj email zde..." required />
             <textarea id="message" name="message" rows="5" cols="40" placeholder="Zadejte svou zpětnou vazbu zde..." required></textarea>
             <button type="submit" class="submit-button">Odeslat</button>
-        </form>        
+        </form>                      
     </div>
 
         <!-- Patička s odkazy a sdílením na sociálních sítích -->
@@ -67,10 +67,11 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
     
     <script src="js/randomBackground.js"></script>
-    <script src="js/inputHandler.js"></script>
     <script src="js/timers.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/datetime.js"></script>
+    <script src="js/inputHandler.js"></script>
+    <script src="js/feedback.js"></script>
     <!-- Přidání skriptu pro sdílení -->
     <script src="js/share.js"></script>
     <script src="js/randomBackground.js"></script>

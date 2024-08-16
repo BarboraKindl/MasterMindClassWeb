@@ -1,8 +1,8 @@
 // Array of background images
 const backgrounds = [
-  "images/honeycomb-pattern1.png",
-  "images/honeycomb-pattern2.png",
-  "images/honeycomb-pattern3.png",
+  "../images/honeycomb-pattern1.png",
+  "../images/honeycomb-pattern2.png",
+  "../images/honeycomb-pattern3.png",
 ];
 
 // Function to select a random background image and store it in localStorage
