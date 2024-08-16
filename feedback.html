@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feedback - Mistermind Class</title>
-    <link rel="stylesheet" href="css/general/styles.css" />
-    <link rel="stylesheet" href="css/general/footer.css" />
-    <link rel="stylesheet" href="css/names.css" />
-    <link rel="stylesheet" href="css/feedback.css" />
+    <link rel="stylesheet" href="public/css/general/styles.css" />
+    <link rel="stylesheet" href="public/css/general/footer.css" />
+    <link rel="stylesheet" href="public/css/names.css" />
+    <link rel="stylesheet" href="public/css/feedback.css" />
 
 </head>
 
@@ -73,40 +73,5 @@
     <script src="js/datetime.js"></script>
     <!-- Přidání skriptu pro sdílení -->
     <script src="js/share.js"></script>
-
     <script src="js/randomBackground.js"></script>
-    <script>
-        // Přidání posluchače událostí k formuláři zpětné vazby pro zpracování odeslání
-        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Zabráníme standardnímu odeslání formuláře
-
-        // Získání hodnot z formuláře
-        const email = document.getElementById('email').value;
-        const feedback = document.getElementById('feedback').value;
-
-        // Odeslání dat na server pomocí fetch API
-        fetch('http://localhost:3000/submitFeedback', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, feedback }),
-        })
-        .then(response => response.text())
-        .then(data => {
-            console.log('Success:', data);
-            document.getElementById('feedbackForm').classList.add('hidden');
-            document.getElementById('confirmationMessage').classList.remove('hidden');
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-    });
-
-
-    // Přidání posluchače událostí k tlačítku zpět pro navigaci na hlavní stránku
-        document.getElementById('backButton').addEventListener('click', function () {
-        window.location.href = 'main.html';
-    });
-    </script>
 </body>
