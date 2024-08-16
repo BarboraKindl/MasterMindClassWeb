@@ -37,3 +37,6 @@ Projekt je vytvořen pomocí následujících technologií:
    ```bash
    git clone https://github.com/BarboraKindl/mistermind-timer.git
    cd mistermind-timer
+
+
+- [MongoDB Atlas](https://cloud.mongodb.com)
