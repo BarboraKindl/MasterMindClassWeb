@@ -1,2 +1,4 @@
 # Ignorovat soubor .env obsahující citlivé informace
 .env
+
+node_modules/
