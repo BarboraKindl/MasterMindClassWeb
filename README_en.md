@@ -37,3 +37,5 @@ The project is built using the following technologies:
    ```bash
    git clone https://github.com/BarboraKindl/mistermind-timer.git
    cd mistermind-timer
+
+2
