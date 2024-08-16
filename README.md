@@ -1,4 +1,4 @@
-# **[Mistermind Class Timer](https://barborakindl.github.io/MastermindClassTool/)**
+# **[Mistermind Class Timer](https://barborakindl.github.io/MasterMindClassWeb/)**
 
 Please select your preferred language: / Prosím vyberte preferovaný jazyk:
 
