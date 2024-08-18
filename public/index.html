@@ -1,83 +1,159 @@
 <!DOCTYPE html>
-<html lang="cs">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Join Mistermind Class on an exciting journey of learning and discovery.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Mistermind Class - Úvodní stránka">
-    <meta property="og:description" content="Join Mistermind Class on an exciting journey of learning and discovery.">
-    <meta name="twitter:card" content="summary_large_image">
-    <title>Mistermind Class - Úvodní stránka</title>
-    <link rel="stylesheet" href="css/general/footer.css" />
-    <link rel="stylesheet" href="css/front_page.css" />
-    <link rel="stylesheet" href="css/general/topbar.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <title>MasterMind Class Tool</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
+header {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
 
-<body>  
-    
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.contact-button {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+main {
+    flex: 1;
+    position: relative;
+}
+
+.hero {
+    height: 70vh;
+    background: url('/images/honeycomb-pattern3.png') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: left;
+}
+
+.content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    padding-left: 70px;
+}
+
+.content h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding-left: 70px;
+}
+.cta-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 70px;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    color: #777;
+}
+
+</style>
+<body>
     <header>
-        <div class="top-bar">
-            <div class="login">
-                <a href="#">Přihlášení</a>
-            </div>
-            <div class="language-switcher">
-                <a href="#" id="cz-flag">🇨🇿</a>
-                <a href="#" id="en-flag">🇬🇧</a>
-            </div>
+        <div class="container">
+            <h1>MastRemind Class Tool</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#" class="contact-button">Contact</a>
+            </nav>
         </div>
     </header>
 
-
-    <div class="landing-container">
-        <h1 class="main-title">
-            Welcome to 
-        </h1>
-        <h1 class="main-title2">
-             Mistermind Class 
-        </h1>
-        <p>Join us in an exciting journey of learning and discovery.</p>
-        <button id="startButton" class="start-button">Začít</button>
-    </div>
-
-    <!-- Footer with links and social share -->
-    <footer class="footer">
-        <div class="footer-links">
-            <a href="https://github.com/BarboraKindl" target="_blank" class="footer-link">Animuj</a>
-            <a href="https://example.com/about" class="footer-link">About</a>
-            <a href="https://example.com/contact" class="footer-link">Contact</a>
-            <!-- Add more links as needed -->
+    <main>
+        <div class="hero">
+            <div class="overlay"></div>
+            <div class="content">
+                <h2>MasterMind Class Tool</h2>
+                <h3>Organize you mastermind meetings effortlessly with Via Porro</h3>
+                <a href="#" class="cta-button" onclick="redirectToMain()">View Services</a>
+            </div>
         </div>
+    </main>
 
-        <!-- Date and Time Display -->
-        <div class="date-time-display" id="dateTimeDisplay"></div>
-
-        <!-- Lišta pro sdílení na sociálních sítích -->
-        <div class="social-share-bar">
-            <a href="#" class="social-link" id="share-whatsapp" title="Sdílet na WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="#" class="social-link" id="share-twitter" title="Sdílet na Twitter">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-link" id="share-facebook" title="Sdílet na Facebook">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a href="#" class="social-link" id="share-linkedin" title="Sdílet na LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="#" class="social-link" id="share-email" title="Sdílet emailem">
-                <i class="fas fa-envelope"></i>
-            </a>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MasterMind Class Tool. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="js/randomBackground.js"></script>
-    <script src="js/navigation.js"></script>
-    <script src="js/share.js"></script>
-    <script src="js/topbar.js"></script>
 </body>
-
+<script>
+    function redirectToMain() {
+    window.location.href = "main.html";
+}
+</script>
 </html>

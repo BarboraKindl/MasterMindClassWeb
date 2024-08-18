@@ -12,7 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding-top: 60px;
+  padding-top: 100px;
   padding-bottom: 200px; /* Adjusted padding to make room for the footer */
 }
 
