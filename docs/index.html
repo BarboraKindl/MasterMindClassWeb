@@ -15,22 +15,24 @@
 
         header {
             background-color: #fff;
-            padding: 10px 0;
+            padding: 10px 40px; /* Add padding to the header to give some space on the sides */
             border-bottom: 1px solid #ddd;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        h1 {
-            margin: 0;
-            font-size: 24px;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%; /* Make the container take the full width */
+            align-items: center;
+        }
+
+        nav {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
         }
 
         nav a {
@@ -48,6 +50,7 @@
             border-radius: 5px;
             text-decoration: none;
         }
+
 
         main {
             flex: 1;
@@ -304,7 +307,7 @@
 <body>
     <header>
         <div class="container">
-            <h1>MastRemind Class Tool</h1>
+            <h1>Mastermind Class Tool</h1>
             <nav>
                 <a href="#">Home</a>
                 <a href="#">About</a>
