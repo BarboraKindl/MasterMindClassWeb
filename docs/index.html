@@ -241,72 +241,64 @@
 
         /* Kontaktovací formulář */
         .contact-section {
-        background-color: #fff;
-        padding: 60px 40px;
-        margin: 50px auto;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-        width: 100%;
-        text-align: center;
-    }
+            background-color: #fff;
+            padding: 60px 20px; /* Adjusted padding to give more room on the sides */
+            margin: 50px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: calc(100% - 40px); /* Ensures that there is a 20px margin on each side */
+            text-align: center;
+        }
 
-    .contact-section h2 {
-        font-size: 2.5rem;
-        color: #333;
-        margin-bottom: 30px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%; /* Ensures the form takes the full width inside the contact section */
+        }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+        .form-group {
+            width: 100%; /* Takes full width of the contact section */
+            margin-bottom: 20px;
+            margin-left: -35px;
+        }
 
-    .form-group {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .contact-form input, .contact-form textarea {
-        width: 100%;
-        padding: 15px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        font-size: 1rem;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
+        .contact-form button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 100%; /* Ensures the button takes full width */
+            max-width: 250px; /* Limits the button's width */
+        }
 
-    .contact-form input:focus, .contact-form textarea:focus {
-        border-color: #28a745;
-        box-shadow: 0 0 8px rgba(40, 167, 69, 0.2);
-        outline: none;
-    }
+        .contact-form button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
 
-    .contact-form button {
-        background-color: #28a745;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        padding: 15px 30px;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+        .contact-form button:active {
+            background-color: #1e7e34;
+            transform: translateY(0);
+        }
 
-    .contact-form button:hover {
-        background-color: #218838;
-        transform: translateY(-2px);
-    }
-
-    .contact-form button:active {
-        background-color: #1e7e34;
-        transform: translateY(0);
-    }
     </style>
 </head>
 <body>
@@ -355,7 +347,7 @@
                 <div class="features-grid">
                     <div class="feature-item">
                         <div class="feature-image">
-                            <img src="images/honeycomb-pattern2.png" alt="Meeting management">
+                            <img src="/images/honeycomb-pattern2.png" alt="Meeting management">
                         </div>
                         <div class="feature-content">
                             <h3>Meeting management</h3>
@@ -364,7 +356,7 @@
                     </div>
                     <div class="feature-item">
                         <div class="feature-image">
-                            <img src="images/honeycomb-pattern2.png" alt="Time allocation">
+                            <img src="/images/honeycomb-pattern2.png" alt="Time allocation">
                         </div>
                         <div class="feature-content">
                             <h3>Time allocation</h3>
@@ -373,7 +365,7 @@
                     </div>
                     <div class="feature-item">
                         <div class="feature-image">
-                            <img src="public/images/honeycomb-pattern2.png" alt="Customizable meeting structure">
+                            <img src="/images/honeycomb-pattern2.png" alt="Customizable meeting structure">
                         </div>
                         <div class="feature-content">
                             <h3>Customizable meeting structure</h3>
